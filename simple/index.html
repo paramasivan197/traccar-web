@@ -15,6 +15,7 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
 
+import LoginForm from "./LoginForm.jsx"
   const LoginScreen = ({ server, setServer, setUser }) => {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
@@ -53,22 +54,14 @@
     };
 
     return (
-      <form onSubmit={handleSubmit} style={formStyle}>
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
-        />
-        <input
-          password={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-          type="password"
-        />
-        <button type="submit">
-          {server.newServer ? 'Register' : 'Login'}
-        </button>
-      </form>
+     <LoginForm 
+     email={email}
+     setEmail={setEmail}
+     password={password}
+     setPassword={setPassword}
+     buttonlabel={server.newServer ? "Register" : "Login"}
+     onSubmit={handleSubmit}
+     />
     );
   };
 

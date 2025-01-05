@@ -12,6 +12,7 @@ import NativeInterface from './common/components/NativeInterface';
 import ServerProvider from './ServerProvider';
 import ErrorBoundary from './ErrorBoundary';
 import AppThemeProvider from './AppThemeProvider';
+import App from './App';
 
 preloadImages();
 
@@ -26,7 +27,7 @@ root.render(
             <ServerProvider>
               <BrowserRouter>
                 <Navigation />
-              </BrowserRouter>
+                </BrowserRouter>
               <ErrorHandler />
               <NativeInterface />
             </ServerProvider>
